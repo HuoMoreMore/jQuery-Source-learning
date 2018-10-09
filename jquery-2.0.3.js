@@ -512,6 +512,8 @@ jQuery.extend({
 		// The try/catch suppresses exceptions thrown when attempting to access
 		// the "constructor" property of certain host objects, ie. |window.location|
 		// https://bugzilla.mozilla.org/show_bug.cgi?id=814622
+
+		// core_hasOwn = class2type.hasOwnProperty
 		try {
 			if ( obj.constructor &&
 					!core_hasOwn.call( obj.constructor.prototype, "isPrototypeOf" ) ) {
@@ -597,7 +599,7 @@ jQuery.extend({
 	globalEval: function( code ) {
 		var script,
 				indirect = eval;
-
+		//window.eval  &&  eval() js 
 		code = jQuery.trim( code );
 
 		if ( code ) {
@@ -623,6 +625,7 @@ jQuery.extend({
 	},
 
 	nodeName: function( elem, name ) {
+		//some browse may return uppercase letter
 		return elem.nodeName && elem.nodeName.toLowerCase() === name.toLowerCase();
 	},
 
