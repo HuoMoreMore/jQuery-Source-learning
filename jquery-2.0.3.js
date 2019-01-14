@@ -730,6 +730,8 @@ jQuery.extend({
 			ret = [],
 			i = 0,
 			length = elems.length;
+		//if  inv is not null/undifined/0/" will return true else false;
+		// ref url http://www.cnblogs.com/aaronjs/archive/2013/06/09/3129256.html 
 		inv = !!inv;
 
 		// Go through the array, only saving the items
