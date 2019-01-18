@@ -18,6 +18,7 @@
 	   we can't give it a  name in compressed version
 	 why pass parameter undefined?
  	 if case of someone in outside modify the undefined
+	 ref url https://segmentfault.com/a/1190000009315582
  ** comments by francis **
  */
 (function( window, undefined ) {
