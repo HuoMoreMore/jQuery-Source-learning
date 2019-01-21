@@ -340,10 +340,26 @@ jQuery.fn = jQuery.prototype = {
 	splice: [].splice
 };
 
-// Give the init function the jQuery prototype for later instantiation
-// if you are not  clear about  ref to: https://www.cnblogs.com/elcarim5efil/p/4686286.html
-//eg:$().jquery ='1.1' it will not work,since by instance object we can only modify the object it's self's atrr
-// but the jquery attr is fn's attr it is getted by _proto_ ,we can not modify by it
+    /** 
+     comment by francis
+     since 
+     jQuery = function( selector, context ) {
+		return new jQuery.fn.init( selector, context, rootjQuery );
+    },
+    we can know jQuery is an object,so we call method like this
+    var test = jQuery()
+    test_poto ->  jQuery.fn.init.prototype 
+    if we let test call method it will search in jQuery.fn.init.prototype
+    now we make 
+    jQuery.fn.init.prototype = jQuery.fn;
+    in  fact
+    jQuery.fn = jQuery.prototype
+    so we can use jQuery.prototype's share method
+    
+	if you are not  clear about  ref to: https://www.cnblogs.com/elcarim5efil/p/4686286.html
+	*/
+
+
 jQuery.fn.init.prototype = jQuery.fn;
 
 jQuery.extend = jQuery.fn.extend = function() {
