@@ -361,7 +361,11 @@ jQuery.fn = jQuery.prototype = {
 
 
 jQuery.fn.init.prototype = jQuery.fn;
-
+/**
+ regf url http://www.cnblogs.com/aaronjs/p/3278578.html
+ jQuery.extend is for jQuery 
+ jQueyr.fn.extend is for jQueyr.fn
+*/
 jQuery.extend = jQuery.fn.extend = function() {
 	var options, name, src, copy, copyIsArray, clone,
 		target = arguments[0] || {},
